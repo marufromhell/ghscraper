@@ -3,6 +3,7 @@ Has 2 scripts
 args:
 - -u, specifys github username
 - --exclude-non-github, ignores git name in commit logs.
+- --allow-forks, fork repos are auto removed, because they likely have no personal data  
 # grepr.sh
 args:
 - path, usually temp unless changed
