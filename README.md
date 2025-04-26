@@ -6,4 +6,5 @@ args:
 # grepr.sh
 args:
 - path, usually temp unless changed
-- dictionary, usually names.txt
+- dictionary(s), usually names., password lists, api keys. ect
+

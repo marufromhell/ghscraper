@@ -53,7 +53,7 @@ def clone_repositories(repos, exclude_non_github):
 
         clone_url = repo["clone_url"]
         click.echo(f"Cloning {repo_name}...")
-        subprocess.run(["git", "clone", "--mirror", clone_url])
+        subprocess.run(["git", "clone", clone_url])  # Removed '--mirror'
 
         # Change directory to the cloned repository
         os.chdir(repo_name)
