@@ -26,7 +26,6 @@ Abraham
 Abu
 Achal
 Achamma
-Action
 Ada
 Adah
 Adaline
@@ -315,7 +314,6 @@ Amelie
 Amelina
 Ameline
 Amelita
-America
 Ami
 Amie
 Amii
@@ -514,7 +512,6 @@ Arabela
 Arabele
 Arabella
 Arabelle
-Arch
 Archie
 Arda
 Ardath
@@ -760,7 +757,6 @@ Barsha
 Bart
 Barton
 Baruk
-Base
 Basheer
 Basia
 Basil
@@ -1113,11 +1109,9 @@ Bulent
 Bulletin
 Bunni
 Bunnie
-Bunny
 Burgess
 Burt
 Burton
-Business
 Buster
 Butch
 Bvworks
@@ -1284,7 +1278,6 @@ Cassi
 Cassie
 Cassondra
 Cassy
-Cat
 Catarina
 Cate
 Caterina
@@ -1363,7 +1356,6 @@ Chahram
 Chai
 Chak-Hong
 Champathon
-Chan
 Chand
 Chanda
 Chandal
@@ -1661,7 +1653,6 @@ Constantine
 Consuela
 Consuelo
 Conway
-Cookie
 Cooney
 Coop
 Cooper
@@ -1682,7 +1673,6 @@ Cordi
 Cordie
 Cordula
 Cordy
-Core
 Coreen
 Corella
 Corena
@@ -1730,7 +1720,6 @@ Cosola
 Costanza
 Costas
 Costas-Dinos
-Count
 Coursdev
 Coursey
 Court
@@ -1928,7 +1917,6 @@ Deane
 Deann
 Deanna
 Deanne
-Dear
 Deb
 Debadeep
 Debbi
@@ -1971,7 +1959,6 @@ Delila
 Delilah
 Delinda
 Delisle
-Dell
 Della
 Delle
 Delly
@@ -2002,14 +1989,11 @@ Denni
 Dennie
 Dennis
 Denny
-Denver
 Deny
 Denys
 Denyse
 Denzil
 Deonne
-Dept
-Der
 Der-Chang
 Derek
 Deri
@@ -2029,7 +2013,6 @@ Desiri
 Desmond
 Detlef
 Detlev
-Dev
 Deva
 Devan
 Devi
@@ -2600,7 +2583,6 @@ Etta
 Etti
 Ettie
 Etty
-Eudora
 Eugene
 Eugenia
 Eugenie
@@ -2640,7 +2622,6 @@ Evvie
 Evvy
 Evy
 Ewen
-Ext
 Eyde
 Eydie
 Eyk
@@ -2693,7 +2674,6 @@ Farshid
 Faruk
 Farzad
 Farzin
-Fast
 Fastmer
 Fastowl
 Fatima
@@ -2717,7 +2697,6 @@ Faythe
 Faz
 Fearless
 Federica
-Fedora
 Fei
 Fei-Yin
 Fekri
@@ -2933,7 +2912,6 @@ Garth
 Gary
 Gaston
 Gates
-Gateway
 Gavin
 Gavra
 Gavrielle
@@ -3062,7 +3040,6 @@ Gillian
 Gillie
 Gilligan
 Gilly
-Gin
 Gina
 Ginelle
 Ginette
@@ -3340,7 +3317,6 @@ Hayden
 Hayley
 Hazel
 Hazem
-He
 Heath
 Heather
 Hector
@@ -4345,11 +4321,9 @@ Kazuko
 Kazuo
 Kazuyuki
 Kedah
-Kee
 Keeley
 Keelia
 Keely
-Keep
 Kees
 Keith
 Kelcey
@@ -4411,7 +4385,6 @@ Keven
 Kevin
 Kevina
 Kevyn
-Keys
 Khai
 Khalid
 Khalil
@@ -5107,7 +5080,6 @@ Mab
 Mabel
 Mabelle
 Mable
-Mac
 Mace
 Maciej
 Mack
@@ -5434,7 +5406,6 @@ Martino
 Martita
 Marty
 Martynne
-Maru
 Marv
 Marvell
 Marvette
@@ -5871,7 +5842,6 @@ Murray
 Murry
 Mustafa
 Mustapha
-My
 Myla
 Myra
 Myrah
@@ -6236,7 +6206,6 @@ Oorschot
 Opal
 Opalina
 Opaline
-Open
 Oper
 Ophelia
 Ophelie
@@ -6293,7 +6262,6 @@ Pacific
 Padma
 Padraig
 Padriac
-Page
 Paige
 Painterson
 Pak
@@ -6420,8 +6388,6 @@ Perrin
 Perrine
 Perry
 Persis
-Pet
-Peta
 Petar
 Pete
 Peter
@@ -6528,8 +6494,6 @@ Prayson
 Prem
 Preston
 Previn
-Pricing
-Print
 Priore
 Pris
 Prisca
@@ -6683,9 +6647,7 @@ Raz
 Rch
 Rchisn
 Rchlab
-Rea
 Reagan
-Real
 Reba
 Rebbecca
 Rebe
@@ -7461,7 +7423,6 @@ Siu-Man
 Siusan
 Siva
 Skiclub
-Skip
 Skipper
 Skippy
 Sky
@@ -7533,7 +7494,6 @@ Starlene
 Starlet
 Starlin
 Starr
-Stars
 Starsdps
 Stateson
 Steen
@@ -7726,7 +7686,6 @@ Tanitansy
 Tansy
 Tanya
 Tao
-Tap
 Tape
 Tara
 Tarah
@@ -8072,7 +8031,6 @@ Uunko
 Vadi
 Vahe
 Vahid
-Val
 Valaree
 Valaria
 Vale
@@ -8246,7 +8204,6 @@ Vm
 Vmbackup
 Vmchange
 Vmcord
-Vo
 Vonni
 Vonnie
 Vonny
@@ -8339,7 +8296,6 @@ Wilhelmine
 Wilhelmus
 Wilie
 Wilkin
-Will
 Willa
 Willabella
 Willamina
@@ -8575,7 +8531,7 @@ Zorana
 Zorina
 Zorine
 Zouheir
-Zsa zsa
+zsa
 Zsazsa
 Zuben
 Zulema
