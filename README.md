@@ -3,7 +3,7 @@ Has 2 scripts
 args:
 - -u, specifys github username
 - --exclude-non-github, ignores git name in commit logs.
-# grepr
+# grepr.sh
 args:
 - path, usually temp unless changed
 - dictionary, usually names.txt
