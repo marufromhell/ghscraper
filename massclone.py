@@ -42,16 +42,25 @@ def fetch_repositories(user):
 
 def clone_repositories(repos, exclude_non_github):
     """
-    Clone the list of repositories and create a text file with commit details.
+    Clone the list of repositories and fetch all branches.
     """
     for repo in repos:
         repo_name = repo["name"]
+        if repo_name == 'ghscraper':
+            # Skip the repository if it is 'ghscraper' to avoid scraping itself
+            click.echo(f"Skipping repository '{repo_name}' to avoid scraping itself.")
+            continue
+
         clone_url = repo["clone_url"]
         click.echo(f"Cloning {repo_name}...")
-        subprocess.run(["git", "clone", clone_url])
+        subprocess.run(["git", "clone", "--mirror", clone_url])
 
         # Change directory to the cloned repository
         os.chdir(repo_name)
+
+        # Fetch all branches
+        click.echo(f"Fetching all branches for {repo_name}...")
+        subprocess.run(["git", "fetch", "--all"])
 
         # Fetch commit details
         click.echo(f"Fetching commits for {repo_name}...")
