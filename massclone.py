@@ -9,7 +9,19 @@ import click
 @click.option('--exclude-non-github', is_flag=True, help='Exclude commits from non-GitHub users')
 @click.option('--allow-forks', is_flag=True, help='Allow cloning of forked repositories')
 @click.option('--email-scrape', is_flag=True, help='Fetch all commits and scrape their pages')
+
+
+
+
 def main(user, token, exclude_non_github, allow_forks, email_scrape):
+    """
+    email: maru@lithium-dev.xyz (pgp attached in my github readme)
+    signal: maru.222
+    BTC: 16innLYQtz123HTwNLY3vScPmEVP7tob8u
+    ETH: 0x48994D78B7090367Aa20FD5470baDceec42cAF62 
+    XMR: 49dNpgP5QSpPDF1YUVuU3ST2tUWng32m8crGQ4NuM6U44CG1ennTvESWbwK6epkfJ6LuAKYjSDKqKNtbtJnU71gi6GrF4Wh
+    """
+    
     """
     Main function to fetch and clone GitHub repositories for a given user.
     """
