@@ -1,0 +1,37 @@
+[project]
+name = "ghscraper_marufromhell"
+version = "1.0.0"
+description = "A github scraper that finds emails and makes a copy of all of someones repos for searching purposes"
+readme = {file = "README.txt", content-type = "text/markdown"}
+requires-python = ">=3.9"
+license = "GPL-3.0-or-later"
+license-files = ["LICENSE"]
+dependencies = [
+    "click"
+    "requests"
+]
+
+[project.scripts]
+ghscraper = "ghscraper:main"
+
+authors = [
+  { name="maru", email="maru@lithium-dev.xyz" },
+]
+
+classifiers = [
+
+    "Development Status :: 4 - Beta"
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.6",
+    "Programming Language :: Python :: 3.7",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+]
+[build-system]
+license = "GPLv3"
+license-files = ["GPL-3.0-only"]
+requires = ["hatchling.build"]
+[project.urls]
+Homepage = "https://github.com/marufromhell/ghscraper"
+Issues = "https://github.com/marufromhell/ghscraper/issues"
