@@ -1,5 +1,5 @@
 Has 2 scripts
-# massclone.py
+# ghscraper.py
 args:
 - -t, your PAT token(not required unless cloning 50+ repos or encountering errors)
 - -u, github target username
