@@ -188,4 +188,5 @@ def fetch_commits(owner, repo_name, exclude_non_github, token):
 
 if __name__ == "__main__":
     main()
+    click.echo("Done!")
 
