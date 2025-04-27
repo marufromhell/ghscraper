@@ -11,3 +11,6 @@ args:
 - path, usually temp unless changed
 - dictionary(s), usually names., password lists, api keys. ect
 
+# INSTALL
+
+`git clone https://github.com/marufromhell/grepr.git && cd grepr && mv grepr /bin/grepr
