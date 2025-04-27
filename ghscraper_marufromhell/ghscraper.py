@@ -8,7 +8,7 @@ import click
 @click.option('--user', '-u', required=True, help='GitHub username')
 @click.option('--exclude-non-github', is_flag=True, help='Exclude commits from non-GitHub users')
 @click.option('--allow-forks', is_flag=True, help='Allow cloning of forked repositories')
-@click.option('--email-scrape', is_flag=True, help='Fetch all commits and scrape their pages')
+@click.option('--email-scrape', '--e', is_flag=True, help='Fetch all commits and scrape their pages')
 
 
 
