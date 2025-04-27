@@ -1,5 +1,5 @@
 Has 2 scripts
-# massclone.py
+# ghscraper.py
 args:
 - -t, your PAT token(not required unless cloning 50+ repos or encountering errors)
 - -u, github target username
@@ -11,3 +11,6 @@ args:
 - path, usually temp unless changed
 - dictionary(s), usually names., password lists, api keys. ect
 
+# INSTALL
+`pip install ghscraper_marufromhell` in venv  
+`git clone https://github.com/marufromhell/grepr.git && cd grepr && sudo mv ./grepr /bin/grepr && chmod u+x /bin/grepr`
