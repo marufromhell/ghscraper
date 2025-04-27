@@ -13,4 +13,4 @@ args:
 
 # INSTALL
 `pip install ghscraper_marufromhell` in venv  
-`git clone https://github.com/marufromhell/grepr.git && cd grepr && sudo mv ./grepr /bin/grepr`
+`git clone https://github.com/marufromhell/grepr.git && cd grepr && sudo mv ./grepr /bin/grepr && chmod u+x /bin/grepr`
