@@ -17,8 +17,8 @@ args:
 
 # Name lists
 The name lists are a way to check for name leaks.
-If you are offensive, you would use a name list with many names on it.
-if you are defensive, you would make a list with the following things:
+If you are offensive, you would use a name list with many names on it.  
+if you are defensive, you would make a list with the following things:  
 - Your name
 - All of your api keys
 - passwords
