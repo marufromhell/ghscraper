@@ -96,7 +96,7 @@ def clone_repositories(repos, exclude_non_github, token, allow_forks, email_scra
 
         try:
             # Use --quiet to suppress prompts and --no-verify to disable hooks
-            subprocess.run(["git", "clone", "--quiet", clone_url], check=True)
+            subprocess.run([f"git clone --quiet {clone_url}"], check=True)
         except subprocess.CalledProcessError as e:
             click.echo(f"Failed to clone repository '{repo_name}': {e}")
             continue
@@ -110,7 +110,7 @@ def clone_repositories(repos, exclude_non_github, token, allow_forks, email_scra
 
         # Fetch all branches
         click.echo(f"Fetching all branches for {repo_name}...")
-        subprocess.run(["git", "fetch", "--all"], check=False)
+        subprocess.run(["git fetch --all"], check=False)
 
         # Fetch commit details if --email-scrape is set
         if email_scrape:
