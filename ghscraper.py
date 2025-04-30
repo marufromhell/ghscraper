@@ -144,7 +144,7 @@ def clone_repositories(repos, exclude_non_github, token, allow_forks, email_scra
     # Write all unique emails with their counts to Emails.txt
     with open(emails_file_path, "w") as emails_file:
         for email, count in sorted_emails:
-            emails_file.write(f"{email} ({count})\n")
+            emails_file.write(f"{email} ({count})\n") # im a probably change this to use files library
     click.echo(f"Added {len(email_counts)} unique emails to Emails.txt, sorted by frequency.")
 
 def fetch_commits(owner, repo_name, exclude_non_github, token):
