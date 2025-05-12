@@ -26,10 +26,6 @@ if you are defensive, you would make a list with the following things:
 
 # If you find yourself on this.
 - if you were using a gmail at any point, check ghunt to see if you have a public google maps account, you probably do.
-- If your email has your real name, delete your account
-- if a repo has your real name, or any other thing in a dictionary attack, `git clone YOUR_REPO`, `rm -rf ./git`, delete the repo, remake the repo.
-- This should be a reminder that you should use a non google email, and never use your real name online.
-
-
+  
 I would add the ability to clone most commits, but i dont have enough time or storage space for that. if i feel like it ill find a way to check the byte/file diff and have a set allowed change diff.
 
