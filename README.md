@@ -1,23 +1,27 @@
 Has 2 scripts
+
+The script that puts gitfive light and zen 6 feet under.
+Ghscraper clones repos and logs commits, making commit indexes in every directory, aswell as a email list in the current directory(with --e flag). While there are better ways to do this than cloning, it doesnt cause rate limiting(as much) and allows you to search for api keys, passwords, emails, or other sensitive info.
+
 # ghscraper.py
 args:
-- -t, your PAT token(not required unless cloning 50+ repos or encountering errors)
+- -t, your PAT token(not required unless cloning alot repos or encountering errors)
 - -u, github target username
 - --exclude-non-github, ignores git name in commit logs.
 - --allow-forks, fork repos are auto removed, because they likely have no personal data and give many false email scrapes 
 - --email-scrape, finds all emails used on PERSONAL repos and sorts by frequency(overpowered)
-# grepr.sh
+# grepr.sh (grep -r, but with 1 or more dictionary files) VERY SLOW
 args:
-- path, usually temp unless changed
-- dictionary(s), usually names., password lists, api keys. ect
+- path, usually temp
+- dictionary(s), usually names, password lists, api keys. ect
 
 # INSTALL
 `pip install ghscraper_marufromhell` to install ghscraper
-`git clone https://github.com/marufromhell/grepr.git && cd grepr && sudo mv ./grepr /bin/grepr && chmod u+x /bin/grepr` to install grepr.sh
+`git clone https://github.com/marufromhell/grepr.git && cd grepr && ./grepr ~/.local/bin/grepr && chmod u+x ~/.local/bin/grepr` to install grepr.sh
 
 # Name lists
 The name lists are a way to check for name leaks.
-If you are offensive, you would use a name list with many names on it.  
+If you are offensive, you would use a name list with many names on it, aswell as password lists, if you have the time.
 if you are defensive, you would make a list with the following things:  
 - Your name
 - All of your api keys
