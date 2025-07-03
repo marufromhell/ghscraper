@@ -2,7 +2,7 @@ import os
 import requests
 import subprocess
 import click
-
+# I want to make a flag to clone EVERY COMMIT, but I have no clue where to start, and that would DEFINITELY require an api key
 @click.command()
 @click.option('--token', '-t', help='Your GitHub API token')
 @click.option('--user', '-u', required=True, help='GitHub username')
@@ -86,7 +86,7 @@ def clone_repositories(repos, exclude_non_github, token, allow_forks, email_scra
             click.echo(f"Skipping repository '{repo_name}' as it appears to be a fork based on its description.")
             continue
 
-        # if i use this on myself, it will scrape itself, and if i use it on anyone who has a fork of deepfacelab, it will recursively ask for login information
+        # if I use this on myself, it will scrape itself, and if I use it on anyone who has a fork of deepfacelab, it will recursively ask for login information
         if repo_name == 'ghscraper' or repo_name == 'DeepFaceLab':
             click.echo(f"Skipping repository '{repo_name}' to avoid scraping itself.")
             continue
