@@ -32,14 +32,11 @@ def main(user, token, exclude_non_github, allow_forks, email_scrape):
     os.chdir(temp_dir)
 
     click.echo("Fetching repositories...")
-    repos = fetch_repositories(user, token)
+    repos = fetch_repos(user, token)
     click.echo(f"Found {len(repos)} repositories.")
-    clone_repositories(repos, exclude_non_github, token, allow_forks, email_scrape)
+    clone(repos, exclude_non_github, token, allow_forks, email_scrape)
 
-def fetch_repositories(user, token):
-    """
-    Fetch repositories for a given GitHub user.
-    """
+def fetch_repos(user, token):
     headers = {}
     if token:
         headers = {"Authorization": f"token {token}"}
@@ -59,13 +56,9 @@ def fetch_repositories(user, token):
         page += 1
     return repos
 
-def clone_repositories(repos, exclude_non_github, token, allow_forks, email_scrape):
-    """
-    Clone the list of repositories and fetch all branches.
-    """
-    # Create or open the global Emails.txt file in append mode
+def clone(repos, exclude_non_github, token, allow_forks, email_scrape):
     emails_file_path = os.path.join("..", "Emails.txt")
-    email_counts = {}  # Dictionary to count email occurrences
+    email_counts = {}
 
     for repo in repos:
         repo_name = repo["name"]
@@ -75,8 +68,6 @@ def clone_repositories(repos, exclude_non_github, token, allow_forks, email_scra
             repo_description = repo_description.lower()
         else:
             repo_description = ""
-
-        # Skip forks if --allow-forks is not set
         if not allow_forks and repo.get("fork", False):
             click.echo(f"Skipping forked repository '{repo_name}'.")
             continue
@@ -95,13 +86,11 @@ def clone_repositories(repos, exclude_non_github, token, allow_forks, email_scra
         click.echo(f"Cloning {repo_name}...")
 
         try:
-            # Use --quiet to suppress prompts and --no-verify to disable hooks
             subprocess.run(["git", "clone", "--quiet", clone_url], check=True)
         except subprocess.CalledProcessError as e:
             click.echo(f"Failed to clone repository '{repo_name}': {e}")
             continue
 
-        # Change directory to the cloned repository
         try:
             os.chdir(repo_name)
         except FileNotFoundError:
@@ -120,7 +109,6 @@ def clone_repositories(repos, exclude_non_github, token, allow_forks, email_scra
             # Write commits to a text file
             with open("commits.txt", "w") as f:
                 for commit in commits:
-                    # Filter out emails ending with @users.noreply.github.com
                     if commit['email'].endswith("@users.noreply.github.com"):
                         continue
 
@@ -135,22 +123,16 @@ def clone_repositories(repos, exclude_non_github, token, allow_forks, email_scra
                     if commit['email'] != "Unknown":
                         email_counts[commit['email']] = email_counts.get(commit['email'], 0) + 1
 
-        # Change back to the parent directory
         os.chdir("..")
-
-    # Sort emails by frequency in descending order
     sorted_emails = sorted(email_counts.items(), key=lambda x: x[1], reverse=True)
 
-    # Write all unique emails with their counts to Emails.txt
     with open(emails_file_path, "w") as emails_file:
         for email, count in sorted_emails:
             emails_file.write(f"{email} ({count})\n")
     click.echo(f"Added {len(email_counts)} unique emails to Emails.txt, sorted by frequency.")
 
 def fetch_commits(owner, repo_name, exclude_non_github, token):
-    """
-    Fetch commits for a given repository and extract email addresses.
-    """
+
     headers = {}
     if token:
         headers = {"Authorization": f"token {token}"}
@@ -171,11 +153,9 @@ def fetch_commits(owner, repo_name, exclude_non_github, token):
             if exclude_non_github and commit["author"] is None:
                 continue
 
-            # Extract the email address
             email = author["email"] if author and "email" in author else "Unknown"
             click.echo(f"Found email: {email}")
 
-            # Add commit details to the list
             commits.append({
                 "author": author["name"] if author else "Unknown",
                 "email": email,
