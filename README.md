@@ -16,8 +16,9 @@ args:
 - dictionary(s), usually names, password lists, api keys. ect
 
 # INSTALL
-`pip install ghscraper_marufromhell` to install ghscraper
-`git clone https://github.com/marufromhell/grepr.git && cd grepr && ./grepr ~/.local/bin/grepr && chmod u+x ~/.local/bin/grepr` to install grepr.sh
+`pip install ghscraper_marufromhell` to install ghscraper  
+`curl https://raw.githubusercontent.com/marufromhell/ghscraper/refs/heads/main/grepr.sh && mv ./grepr.sh ~/.local/bin/grepr && chmod u+x ~/.local/bin/grepr`  to install grepr.sh  
+`curl curl https://raw.githubusercontent.com/marufromhell/ghscraper/refs/heads/main/names.txt` for basic name list  
 
 # Name lists
 The name lists are a way to check for name leaks.
