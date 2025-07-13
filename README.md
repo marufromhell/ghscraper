@@ -16,7 +16,7 @@ args:
 - dictionary(s), usually names, password lists, api keys. ect
 
 # INSTALL
-`pip install ghscraper_marufromhell` to install ghscraper  
+`pip install ghscraper_maru` to install ghscraper  
 `curl https://raw.githubusercontent.com/marufromhell/ghscraper/refs/heads/main/grepr.sh && mv ./grepr.sh ~/.local/bin/grepr && chmod u+x ~/.local/bin/grepr`  to install grepr.sh  
 `curl curl https://raw.githubusercontent.com/marufromhell/ghscraper/refs/heads/main/names.txt` for basic name list  
 
