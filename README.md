@@ -12,5 +12,5 @@ args:
 - dictionary(s), usually names., password lists, api keys. ect
 
 # INSTALL
-`pip install ghscraper_marufromhell` in venv  
+`pip install ghscraper_maru` in venv  
 `git clone https://github.com/marufromhell/grepr.git && cd grepr && sudo mv ./grepr /bin/grepr && chmod u+x /bin/grepr`
