@@ -3,17 +3,24 @@ import requests
 import subprocess
 import click
 # I want to make a flag to clone EVERY COMMIT, but I have no clue where to start, and that would DEFINITELY require an api key
+art="""        .__                                                    
+   ____ |  |__   ______ ________________  ______   ___________ 
+  / ___\\|  |  \\ /  ___// ___\\_  __ \\__  \\ \\____ \\_/ __ \\_  __ \\
+ / /_/  >   Y  \\\\___ \\  \\___|  | \\// __ \\|  |_> >  ___/|  | \\/
+ \\___  /|___|  /____  >\\___  >__|  (____  /   __/ \\___  >__|   
+/_____/      \\/     \\/     \\/           \\/|__|        \\/       """
+click.echo(art)
+
 @click.command()
 @click.option('--token', '-t', help='Your GitHub API token')
 @click.option('--user', '-u', required=True, help='GitHub username')
 @click.option('--exclude-non-github', is_flag=True, help='Exclude commits from non-GitHub users')
 @click.option('--allow-forks', is_flag=True, help='Allow cloning of forked repositories')
 @click.option('--email-scrape', '--e', is_flag=True, help='Fetch all commits and scrape their pages')
+@click.option('--contrib-check', '--cc', is_flag=True, help='Dont scrape repos with multiple contributors, REQUIRES PAT')
 
 
-
-
-def main(user, token, exclude_non_github, allow_forks, email_scrape):
+def main(user, token, exclude_non_github, allow_forks, email_scrape, contrib_check):
     """
     email: maru@lithium-dev.xyz (pgp attached in my github readme)
     signal: maru.222
@@ -25,7 +32,7 @@ def main(user, token, exclude_non_github, allow_forks, email_scrape):
     """
     Main function to fetch and clone GitHub repositories for a given user.
     """
-    # Create a temp directory for cloning repositories
+   
     temp_dir = "temp"
     if not os.path.exists(temp_dir):
         os.makedirs(temp_dir)
@@ -34,7 +41,7 @@ def main(user, token, exclude_non_github, allow_forks, email_scrape):
     click.echo("Fetching repositories...")
     repos = fetch_repos(user, token)
     click.echo(f"Found {len(repos)} repositories.")
-    clone(repos, exclude_non_github, token, allow_forks, email_scrape)
+    clone(repos, exclude_non_github, token, allow_forks, email_scrape, contrib_check)
 
 def fetch_repos(user, token):
     headers = {}
@@ -56,7 +63,19 @@ def fetch_repos(user, token):
         page += 1
     return repos
 
-def clone(repos, exclude_non_github, token, allow_forks, email_scrape):
+def contributorcheck(owner, repo_name, token):
+    headers = {}
+    if token:
+        headers = {"Authorization": f"token {token}"}
+    api = f"https://api.github.com/repos/{owner}/{repo_name}/contributors"
+    response = requests.get(api, headers=headers, params={"per_page": 2})
+    if response.status_code != 200:
+        click.echo(f"Failed to fetch contributors for {repo_name}: {response.status_code}")
+        return False
+    data = response.json()
+    return len(data) > 1
+
+def clone(repos, exclude_non_github, token, allow_forks, email_scrape, contrib_check):
     emails_file_path = os.path.join("..", "Emails.txt")
     email_counts = {}
 
@@ -72,14 +91,16 @@ def clone(repos, exclude_non_github, token, allow_forks, email_scrape):
             click.echo(f"Skipping forked repository '{repo_name}'.")
             continue
 
-       
-        if "fork" in repo_description or "original repository" in repo_description:
+        if not allow_forks and "fork" in repo_description or "original repository" in repo_description:
             click.echo(f"Skipping repository '{repo_name}' as it appears to be a fork based on its description.")
             continue
-
-        # if I use this on myself, it will scrape itself, and if I use it on anyone who has a fork of deepfacelab, it will recursively ask for login information
+        #NEED TO ADD A PRIVATE CHECK!!!
         if repo_name == 'ghscraper' or repo_name == 'DeepFaceLab':
-            click.echo(f"Skipping repository '{repo_name}' to avoid scraping itself.")
+            click.echo(f"Skipping repository '{repo_name}' to avoid scraping itself/giving credential loop.")
+            continue
+        owner = repo["owner"]["login"]
+        if contrib_check and contributorcheck(owner, repo_name, token):
+            click.echo(f"Skipping repository '{repo_name}' because it has multiple contributors.")
             continue
 
         clone_url = repo["clone_url"]
